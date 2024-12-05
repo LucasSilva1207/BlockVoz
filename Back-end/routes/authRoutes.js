@@ -1,15 +1,16 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
-const Usuario = require('../../models/user');  // Atualize para o caminho correto
+const Usuario = require('../models/user');  
 const router = express.Router();
+
 
 // Função para validar e-mail
 const validarEmail = (email) => {
   const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
   return regex.test(email);
 };
-
+  
 // Endpoint de Cadastro de Usuário
 router.post('/register', async (req, res) => {
   const { nome, email, senha } = req.body;

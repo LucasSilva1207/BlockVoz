@@ -1,13 +1,12 @@
-require('dotenv').config(); // Carrega as variáveis do .env
+require('dotenv').config(); 
 
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors'); // Importando o CORS
-const userRoutes = require('./routes/userRoutes'); // Rota para usuários
-const registerRouter = require('./routes/authRoutes'); // Rota para autenticação
-const server = express(); // Criando a instância do servidor
+const cors = require('cors'); // 
+const userRoutes = require('./routes/userRoutes'); 
+const registerRouter = require('./routes/authRoutes'); 
+const server = express(); 
 
-// Configuração do CORS (permite requisições de qualquer origem)
 server.use(cors());
 
 // Conexão com o MongoDB
@@ -25,8 +24,7 @@ server.use(express.json());
 // Rotas
 server.use('/api/users', userRoutes); // Rota de usuários
 server.use('/api/auth', registerRouter); // Rota de autenticação (registro e login)
-server.use('/api/quiz', quizRouter); // Rota do quiz
-server.use('/api/wallet', walletRouter); // Rota da wallet
+
 
 // Porta do servidor
 const PORT = process.env.PORT || 3000;
