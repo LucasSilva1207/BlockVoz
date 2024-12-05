@@ -6,14 +6,14 @@
         "use": "@vercel/static" 
       },
       { 
-        "src": "api/**", 
+        "src": "Back-end/**", 
         "use": "@vercel/node" 
       }
     ],
     "routes": [
       { 
         "src": "/api/(.*)", 
-        "dest": "/api/$1" 
+        "dest": "/Back-end/$1" 
       },
       { 
         "src": "/(.*)", 
