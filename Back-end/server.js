@@ -8,6 +8,7 @@ const registerRouter = require('./routes/authRoutes');
 
 const server = express();
 
+// Usando CORS
 server.use(cors());
 
 // Conexão com o MongoDB
@@ -26,5 +27,5 @@ server.use(express.json());
 server.use('/api/users', userRoutes); // Rota de usuários
 server.use('/api/auth', registerRouter); // Rota de autenticação (registro e login)
 
-// Exportando o servidor como um módulo para o Vercel
+// Exportando o servidor para que o Vercel gerencie a execução
 module.exports = server;
