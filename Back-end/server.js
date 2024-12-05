@@ -9,6 +9,7 @@ server.use(cors());
 
 // Defina as variáveis de ambiente diretamente no código
 process.env.MONGO_URI = 'mongodb+srv://lucasluc1207:87500273@cluster0.li8djjr.mongodb.net/blockvozDB?retryWrites=true&w=majority';
+process.env.JWT_SECRET = 'minha-chave-secreta-super-segura!@123';
 process.env.PORT = 3000; // ou a porta que você preferir
 
 // Conexão com o MongoDB
