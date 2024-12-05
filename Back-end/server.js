@@ -1,11 +1,12 @@
-require('dotenv').config(); 
+require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors'); // 
-const userRoutes = require('./routes/userRoutes'); 
-const registerRouter = require('./routes/authRoutes'); 
-const server = express(); 
+const cors = require('cors');
+const userRoutes = require('./routes/userRoutes');
+const registerRouter = require('./routes/authRoutes');
+
+const server = express();
 
 server.use(cors());
 
@@ -25,9 +26,5 @@ server.use(express.json());
 server.use('/api/users', userRoutes); // Rota de usuários
 server.use('/api/auth', registerRouter); // Rota de autenticação (registro e login)
 
-
-// Porta do servidor
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
+// Exportando o servidor como um módulo para o Vercel
+module.exports = server;
