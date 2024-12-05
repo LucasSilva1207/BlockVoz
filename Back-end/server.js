@@ -1,13 +1,15 @@
-require('dotenv').config(); 
-
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors'); // 
+const cors = require('cors'); 
 const userRoutes = require('./routes/userRoutes'); 
 const registerRouter = require('./routes/authRoutes'); 
 const server = express(); 
 
 server.use(cors());
+
+// Defina as variáveis de ambiente diretamente no código
+process.env.MONGO_URI = 'mongodb+srv://lucasluc1207:87500273@cluster0.li8djjr.mongodb.net/blockvozDB?retryWrites=true&w=majority';
+process.env.PORT = 3000; // ou a porta que você preferir
 
 // Conexão com o MongoDB
 mongoose
@@ -24,7 +26,6 @@ server.use(express.json());
 // Rotas
 server.use('/api/users', userRoutes); // Rota de usuários
 server.use('/api/auth', registerRouter); // Rota de autenticação (registro e login)
-
 
 // Porta do servidor
 const PORT = process.env.PORT || 3000;
