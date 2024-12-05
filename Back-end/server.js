@@ -5,8 +5,6 @@ const mongoose = require('mongoose');
 const cors = require('cors'); // Importando o CORS
 const userRoutes = require('./routes/userRoutes'); // Rota para usuários
 const registerRouter = require('./routes/authRoutes'); // Rota para autenticação
-const quizRouter = require('./routes/quizRoutes'); // Rota para o quiz
-const walletRouter = require('./routes/walletRoutes'); // Rota para a wallet
 const server = express(); // Criando a instância do servidor
 
 // Configuração do CORS (permite requisições de qualquer origem)

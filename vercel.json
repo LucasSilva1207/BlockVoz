@@ -1,13 +1,28 @@
 {
     "version": 2,
     "builds": [
-      { "src": "App-Quiz-Javascript-master/**", "use": "@vercel/static" },
-      { "src": "Back-end/**", "use": "@vercel/node" }
+      { 
+        "src": "App-Quiz-Javascript-master/**", 
+        "use": "@vercel/static" 
+      },
+      { 
+        "src": "Back-end/api/**", 
+        "use": "@vercel/node" 
+      }
     ],
     "routes": [
-      { "src": "/api/(.*)", "dest": "/Back-end/$1" },
-      { "src": "/(.*)", "dest": "/App-Quiz-Javascript-master/$1" },
-      { "src": "/", "dest": "/App-Quiz-Javascript-master/login.html" }  
+      { 
+        "src": "/api/(.*)", 
+        "dest": "/Back-end/api/$1" 
+      },
+      { 
+        "src": "/(.*)", 
+        "dest": "/App-Quiz-Javascript-master/$1" 
+      },
+      { 
+        "src": "/", 
+        "dest": "/App-Quiz-Javascript-master/login.html" 
+      }
     ]
   }
   
