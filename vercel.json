@@ -2,18 +2,18 @@
     "version": 2,
     "builds": [
       {
-        "src": "App-Quiz-Javascript-master/**",
-        "use": "@vercel/static"
-      },
-      {
         "src": "Back-end/server.js",
         "use": "@vercel/node"
+      },
+      {
+        "src": "App-Quiz-Javascript-master/**",
+        "use": "@vercel/static"
       }
     ],
     "routes": [
       {
         "src": "/api/(.*)",
-        "dest": "/Back-end/server.js"
+        "dest": "/Back-end/$1"
       },
       {
         "src": "/(.*)",
