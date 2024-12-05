@@ -1,0 +1,160 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo geral */
+body {
+  background-color: #f4f4f4; /* Cor de fundo clara */
+  color: #333; /* Texto em tom escuro */
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #068E84;
+  color: white;
+  padding: 1rem 0;
+  margin-bottom: 100px; /* Adiciona espaço abaixo do menu */
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+header nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Container principal */
+.container {
+  background-color: white;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex-grow: 1; /* Faz o conteúdo principal ocupar o espaço disponível */
+}
+
+/* Perguntas */
+.questions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.question {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.answers-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.answer {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #068E84;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.answer:hover {
+  background-color: #04625b;
+}
+
+/* Botões */
+.button {
+  padding: 12px 20px;
+  background-color: #068E84;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.button:hover {
+  background-color: #04625b;
+}
+
+/* Controles */
+.controls-container {
+  margin-top: 20px;
+}
+
+/* Display de moedas */
+.score-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 18px;
+  color: #068E84;
+  margin-bottom: 20px;
+}
+
+.coin-image {
+  width: 24px;
+  height: 24px;
+}
+
+/* Efeitos gerais */
+.hide {
+  display: none;
+}
+
+.correct {
+  background-color: #2e7d32; /* Verde escuro para correto */
+}
+
+.incorrect {
+  background-color: #f44336; /* Vermelho para incorreto */
+}
+
+/* Rodapé */
+footer {
+  background-color: #068E84;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto; /* Empurra o footer para o final */
+}

@@ -1,0 +1,120 @@
+/* Reset básico */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+}
+
+/* Header */
+header {
+  background-color: #068E84;
+  color: white;
+  padding: 1rem 0;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Seção de Ajuda */
+.help-section {
+  padding: 60px 20px;
+  background-color: #fff;
+  flex-grow: 1; /* Isso faz o conteúdo principal crescer e empurrar o rodapé para o final */
+}
+
+.help-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.help-container h2 {
+  font-size: 2.5rem;
+  color: #068E84;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Estilos para o Acordeão */
+.accordion {
+  background-color: #068E84;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  transition: background-color 0.3s, transform 0.2s ease;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.accordion:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.accordion.active {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: #f1f1f1;
+  overflow: hidden;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+  transition: max-height 0.2s ease-out;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.panel p {
+  padding: 10px 0;
+}
+
+/* Footer */
+footer {
+  background-color: #068E84;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <link rel="stylesheet" href="/Login/login.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <div class="input-wrapper">
+                        <span class="material-icons">email</span>
+                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+                    <div class="input-wrapper">
+                        <span class="material-icons">lock</span>
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-login">Entrar</button>
+                <div class="forgot-password">
+                    <a href="/Login/reset_senha/reset.html">Esqueceu a senha?</a>
+                </div>
+                <div class="signup-prompt">
+                    <p>Ainda não tem uma conta? <a href="/Login/criar_conta/criar.html">Cadastre-se</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Blockvoz - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            try {
+                const response = await fetch('http://localhost:3000/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, senha })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('Login bem-sucedido!');
+                    // Armazenar o token no localStorage ou sessionStorage para usar nas requisições subsequentes
+                    localStorage.setItem('token', data.token);
+                    // Redirecionar para a página de dashboard ou home
+                    window.location.href = '/Home/home.html';
+                } else {
+                    alert(`Erro: ${data.message}`);
+                }
+            } catch (error) {
+                alert('Erro ao conectar ao servidor');
+            }
+        });
+    </script>
+
+</body>
+</html>

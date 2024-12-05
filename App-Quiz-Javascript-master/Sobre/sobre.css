@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: #068E84;
+    color: white;
+    padding: 1rem 0;
+  }
+  
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .about-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .about-text h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .about-text p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 600px;
+  }
+  
+  .about-image {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;  /* Ajusta o comportamento da imagem para cobrir o espaço */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mission-section, .values-section, .contact-section {
+    background-color: white;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .mission-section h2, .values-section h2, .contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .values-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .value-item {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+  }
+  
+  .value-item h3 {
+    font-size: 1.8rem;
+    color: #068E84;
+    margin-bottom: 10px;
+  }
+  
+  .value-item p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .contact-button {
+    background-color: #068E84;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-button:hover {
+    background-color: #45a049;
+  }
+  
+  .footer {
+    background-color: #068E84;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  

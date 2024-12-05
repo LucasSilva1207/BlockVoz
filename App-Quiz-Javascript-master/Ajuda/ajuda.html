@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/Ajuda/ajuda.css">
+  <title>Página de Ajuda</title>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1>Blockvoz</h1>
+      <nav>
+        <ul>
+          <li><a href="/Home/home.html">Início</a></li>
+          <li><a href="/Sobre/sobre.html">Sobre</a></li>
+          <li><a href="/Ajuda/ajuda.html">Ajuda</a></li>
+          <li><a href="/Contato/contato.html">Contato</a></li>
+          <li><a href="/Login/login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="help-section">
+    <div class="help-container">
+      <h2>Como podemos ajudar?</h2>
+      
+      <button class="accordion">1. Como começar o quiz?</button>
+      <div class="panel">
+        <p>Para começar o quiz, clique no botão "Começar Quiz!" na página inicial. As perguntas serão apresentadas uma por vez, e você poderá escolher uma resposta.</p>
+      </div>
+
+      <button class="accordion">2. O que são as moedas?</button>
+      <div class="panel">
+        <p>Você ganha moedas ao acertar as perguntas do quiz. As moedas podem ser trocadas por benefícios na plataforma Conecta Recife.</p>
+      </div>
+
+      <button class="accordion">3. Como posso trocar minhas moedas por benefícios?</button>
+      <div class="panel">
+        <p>Após acumular moedas suficientes, acesse a seção de benefícios no site Conecta Recife e escolha a recompensa que deseja resgatar.</p>
+      </div>
+
+      <button class="accordion">4. O quiz é gratuito?</button>
+      <div class="panel">
+        <p>Sim, o quiz é totalmente gratuito! Você pode participar uma vez por dia para acumular mais moedas e benefícios.</p>
+      </div>
+
+      <button class="accordion">5. Como posso entrar em contato com a equipe?</button>
+      <div class="panel">
+        <p>Se você tiver alguma dúvida ou sugestão, visite nossa página de "Contato" e envie sua mensagem.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Blockvoz - Todos os direitos reservados.</p>
+  </footer>
+
+  <script >
+    // Script para controlar o acordeão
+document.addEventListener("DOMContentLoaded", function() {
+  var acc = document.getElementsByClassName("accordion");
+  
+  for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");  // Adiciona a classe 'active' quando o acordeão for clicado
+      var panel = this.nextElementSibling;
+      
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+});
+
+  </script>
+</body>
+</html>

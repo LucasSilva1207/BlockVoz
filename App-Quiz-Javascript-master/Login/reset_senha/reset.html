@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esqueceu a Senha</title>
+    <link rel="stylesheet" href="/Login/reset_senha/reset.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="reset-container">
+        <div class="reset-box">
+            <h2>Esqueceu a Senha?</h2>
+            <p>Digite seu e-mail abaixo para receber um link para redefinir sua senha.</p>
+            <form id="resetForm">
+                <div class="input-group">
+                    <br>
+                    <div class="input-wrapper">
+                        <span class="material-icons">email</span>
+                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-reset">Enviar Link</button>
+                <div class="login-prompt">
+                    <p>Lembrou da senha? <a href="/Login/login.html">Voltar para login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Blockvoz - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // Script para enviar o e-mail ao backend e solicitar o reset de senha
+
+        document.getElementById("resetForm").addEventListener("submit", async function (event) {
+            event.preventDefault(); // Previne o envio padrão do formulário
+
+            const email = document.getElementById("email").value;
+
+            // Verifica se o campo de e-mail não está vazio
+            if (!email) {
+                alert("Por favor, digite seu e-mail.");
+                return;
+            }
+
+            try {
+                // Envia a solicitação para o backend
+                const response = await fetch('http://localhost:3000/api/auth/reset-senha', {  // Substitua pela URL do seu backend
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email })  // Envia o e-mail como parte do corpo da requisição
+                });
+
+                // Converte a resposta do backend em JSON
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Exibe uma mensagem de sucesso para o usuário
+                    alert("Um link para redefinir a senha foi enviado para o seu e-mail.");
+                } else {
+                    // Exibe a mensagem de erro retornada pelo backend
+                    alert(data.message || "Erro ao solicitar a redefinição de senha.");
+                }
+            } catch (error) {
+                // Caso ocorra um erro na requisição, exibe uma mensagem de erro
+                console.error('Erro ao solicitar redefinição de senha:', error);
+                alert("Erro ao tentar enviar o link de redefinição.");
+            }
+        });
+    </script>
+
+</body>
+</html>

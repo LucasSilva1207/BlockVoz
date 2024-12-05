@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "App-Quiz-Javascript-master"
+		},
+		{
+			"path": "Back-end"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "App-Quiz-Javascript-master"
+	}
+}

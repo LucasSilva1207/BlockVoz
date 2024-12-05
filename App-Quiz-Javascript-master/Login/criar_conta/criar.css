@@ -1,0 +1,148 @@
+/* Reset básico */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #333;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #068E84;
+  }
+  
+  .register-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .register-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50px);
+    opacity: 0;
+    animation: fadeIn 0.6s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .input-group label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input-wrapper:hover {
+    border-color: #068E84;
+  }
+  
+  .input-wrapper span {
+    color: #777;
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+  
+  .input-wrapper input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    color: #333;
+  }
+  
+  .input-wrapper input:focus {
+    color: #068E84;
+  }
+  
+  .btn-register {
+    background-color: #068E84;
+    color: white;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-register:hover {
+    background-color: #45a049;
+  }
+  
+  .login-prompt {
+    margin-top: 20px;
+  }
+  
+  .login-prompt a {
+    color: #068E84;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .login-prompt a:hover {
+    color: #45a049;
+    text-decoration: underline;
+  }
+  
+  footer {
+    background-color: #068E84;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 768px) {
+    .reset-box {
+      padding: 30px;
+    }
+  }
