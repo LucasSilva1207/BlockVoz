@@ -4,7 +4,7 @@ const Usuario = require('../models/user');
 const authenticateToken = require('../middlewares/authMiddleware');
 
 // Endpoint de Obter Dados do Usuário
-router.get('/me', authenticateToken, async (req, res) => {
+router.get('/user', authenticateToken, async (req, res) => {
   try {
     const usuario = await Usuario.findById(req.user.id);
     if (!usuario) return res.status(404).json({ message: 'Usuário não encontrado' });
