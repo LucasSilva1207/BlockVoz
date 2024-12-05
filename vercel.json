@@ -6,7 +6,8 @@
     ],
     "routes": [
       { "src": "/api/(.*)", "dest": "/Back-end/$1" },
-      { "src": "/(.*)", "dest": "/App-Quiz-Javascript-master/$1" }
+      { "src": "/(.*)", "dest": "/App-Quiz-Javascript-master/$1" },
+      { "src": "/", "dest": "/App-Quiz-Javascript-master/login.html" }  
     ]
   }
   
